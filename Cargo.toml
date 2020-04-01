@@ -1,0 +1,19 @@
+[package]
+name = "rename_derive"
+version = "0.1.0"
+authors = ["not-matthias <26800596+not-matthias@users.noreply.github.com>"]
+edition = "2018"
+
+[lib]
+proc-macro = true
+
+[[test]]
+name = "tests"
+path = "tests/tests.rs"
+
+[dev-dependencies]
+trybuild = "1.0"
+
+[dependencies]
+syn = { version = "1.0.17", features = ["extra-traits", "full"]}
+quote = "1.0.3"
