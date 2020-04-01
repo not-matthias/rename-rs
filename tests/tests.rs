@@ -1,4 +1,4 @@
-use struct_rename::rename;
+use rename_derive::rename;
 
 #[doc = "This is just a simple test structure."]
 #[rename(name = "Something")]

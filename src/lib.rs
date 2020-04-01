@@ -6,20 +6,41 @@ use syn::{parse_macro_input, LitStr, Token};
 
 #[derive(Debug, Default)]
 struct RenameArgs {
-    name: String,
+    name: Option<String>,
+    append: Option<String>,
 }
 
 mod keyword {
     syn::custom_keyword!(name);
+    syn::custom_keyword!(append);
 }
 
-impl Parse for RenameArgs {
-    fn parse(input: ParseStream) -> Result<Self> {
+impl RenameArgs {
+    /// Parse the 'name' input parameter.
+    fn parse_name(input: ParseStream) -> Result<String> {
         input.parse::<keyword::name>()?;
         input.parse::<Token![=]>()?;
         let name: LitStr = input.parse()?;
 
-        Ok(RenameArgs { name: name.value() })
+        Ok(name.value())
+    }
+
+    /// Parse the 'append' input parameter.
+    fn parse_append(input: ParseStream) -> Result<String> {
+        input.parse::<keyword::append>()?;
+        input.parse::<Token![=]>()?;
+        let name: LitStr = input.parse()?;
+
+        Ok(name.value())
+    }
+}
+
+impl Parse for RenameArgs {
+    fn parse(input: ParseStream) -> Result<Self> {
+        Ok(RenameArgs {
+            name: Self::parse_name(input).ok(),
+            append: Self::parse_append(input).ok()
+        })
     }
 }
 
@@ -37,7 +58,19 @@ pub fn rename(args: TokenStream, input: TokenStream) -> TokenStream {
 
     // Set the new name
     //
-    input.ident = syn::Ident::new(&args.name, input.span());
+    let mut result = String::new();
+
+    if let Some(name) = args.name {
+        result.push_str(&name);
+    }
+
+    if let Some(append) = args.append {
+        result.push_str(&append);
+    }
+
+    // Create ident
+    //
+    input.ident = syn::Ident::new(&result, input.span());
 
     // Generate the new token stream
     //
