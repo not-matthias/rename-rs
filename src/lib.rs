@@ -58,10 +58,10 @@ pub fn rename(args: TokenStream, input: TokenStream) -> TokenStream {
 
     // Set the new name
     //
-    let mut result = String::new();
+    let mut result = input.ident.to_string();
 
     if let Some(name) = args.name {
-        result.push_str(&name);
+        result = name;
     }
 
     if let Some(append) = args.append {
