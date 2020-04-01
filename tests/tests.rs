@@ -29,3 +29,17 @@ fn test_append() {
     assert_eq!(test.one, 1);
     assert_eq!(test.two, 2);
 }
+
+// #[rename(name = "Something", append = "Three")]
+// pub struct Unknown {
+//     one: u32,
+//     two: u32,
+// }
+//
+// #[test]
+// fn test_name_and_append() {
+//     let test = SomethingTwo { one: 1, two: 2 };
+//
+//     assert_eq!(test.one, 1);
+//     assert_eq!(test.two, 2);
+// }

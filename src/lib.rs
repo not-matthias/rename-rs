@@ -53,6 +53,7 @@ impl Parse for RenameArgs {
 ///
 #[proc_macro_attribute]
 pub fn rename(args: TokenStream, input: TokenStream) -> TokenStream {
+    // TODO: Use syn::AttributeArgs and allow both `name` and `rename`
     let args = parse_macro_input!(args as RenameArgs);
     let mut input = parse_macro_input!(input as syn::ItemStruct);
 
