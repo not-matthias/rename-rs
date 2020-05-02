@@ -15,9 +15,6 @@ proc-macro = true
 name = "tests"
 path = "tests/tests.rs"
 
-[dev-dependencies]
-trybuild = "1.0"
-
 [dependencies]
 syn = { version = "1.0.17", features = ["full"]}
 quote = "1.0.3"
