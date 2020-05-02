@@ -54,13 +54,7 @@ impl Parse for RenameArgs {
     }
 }
 
-/// Renames the structure to the specified name.
-///
-/// Useful documentation:
-/// - https://stackoverflow.com/tags/rust-proc-macros/info
-/// - https://github.com/dtolnay/syn/issues/516
-/// - https://docs.serde.rs/syn/type.AttributeArgs.html
-///
+/// The implementation for the `rename` attribute macro.
 #[proc_macro_attribute]
 pub fn rename(args: TokenStream, input: TokenStream) -> TokenStream {
     let args = parse_macro_input!(args as RenameArgs);
