@@ -1,45 +1,57 @@
 use rename_derive::rename;
 
-#[doc = "This is just a simple test structure."]
-#[rename(name = "Something")]
-#[derive(Default, Debug)]
-pub struct TestNameStruct {
+#[rename(name = "Name")]
+pub struct Placeholder {
     one: u32,
     two: u32,
 }
 
 #[test]
 fn test_name() {
-    let test = Something::default();
+    let test = Name { one: 1, two: 2 };
 
-    assert_eq!(test.one, 0);
-    assert_eq!(test.two, 0);
+    assert_eq!(test.one, 1);
+    assert_eq!(test.two, 2);
 }
 
-#[rename(append = "Two")]
-pub struct Something {
+#[rename(prepend = "Prepend")]
+pub struct Prepend {
+    one: u32,
+    two: u32,
+}
+
+#[test]
+fn test_prepend() {
+    let test = PrependPrepend { one: 1, two: 2 };
+
+    assert_eq!(test.one, 1);
+    assert_eq!(test.two, 2);
+}
+
+#[rename(append = "Append")]
+pub struct Append {
     one: u32,
     two: u32,
 }
 
 #[test]
 fn test_append() {
-    let test = SomethingTwo { one: 1, two: 2 };
+    let test = AppendAppend { one: 1, two: 2 };
 
     assert_eq!(test.one, 1);
     assert_eq!(test.two, 2);
 }
 
-// #[rename(name = "Something", append = "Three")]
-// pub struct Unknown {
-//     one: u32,
-//     two: u32,
-// }
-//
-// #[test]
-// fn test_name_and_append() {
-//     let test = SomethingTwo { one: 1, two: 2 };
-//
-//     assert_eq!(test.one, 1);
-//     assert_eq!(test.two, 2);
-// }
+#[rename(name = "Two", prepend = "One", append = "Three")]
+pub struct AnotherPlaceholder {
+    one: u32,
+    two: u32,
+}
+
+#[test]
+fn test_prepend_name_append() {
+    let test = OneTwoThree { one: 1, two: 2 };
+
+    assert_eq!(test.one, 1);
+    assert_eq!(test.two, 2);
+}
