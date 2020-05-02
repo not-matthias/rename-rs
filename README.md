@@ -6,6 +6,8 @@
 ![Lines of Code](https://tokei.rs/b1/github/not-matthias/rename_derive)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/not-matthias/rename_derive/blob/master/LICENSE)
 
+Easy modification of structure names.
+
 ## Example
 
 ```rust
