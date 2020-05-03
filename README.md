@@ -1,7 +1,7 @@
 # rename_derive
 
 [![crates.io](https://img.shields.io/crates/v/rename_derive.svg)](https://crates.io/crates/rename_derive)
-[![docs.rs](https://docs.rs/rand/badge.svg)](https://docs.rs/rename_derive)
+[![docs.rs](https://docs.rs/rename_derive/badge.svg)](https://docs.rs/rename_derive)
 ![Lines of Code](https://tokei.rs/b1/github/not-matthias/rename_derive)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/not-matthias/rename_derive/blob/master/LICENSE)
 
