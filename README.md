@@ -1,4 +1,4 @@
-# rename_derive
+# rename
 
 [![crates.io](https://img.shields.io/crates/v/rename_derive.svg)](https://crates.io/crates/rename_derive)
 [![docs.rs](https://docs.rs/rename_derive/badge.svg)](https://docs.rs/rename_derive)
