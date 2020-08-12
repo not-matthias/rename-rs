@@ -3,7 +3,6 @@
 [![crates.io](https://img.shields.io/crates/v/rename.svg)](https://crates.io/crates/rename)
 [![docs.rs](https://docs.rs/rename/badge.svg)](https://docs.rs/rename)
 ![Lines of Code](https://tokei.rs/b1/github/not-matthias/rename-rs)
-[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/not-matthias/rename-rs/blob/master/LICENSE)
 
 Easy modification of structure names.
 
